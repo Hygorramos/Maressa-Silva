@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maressa Silva — Design Gráfico & Edição de Vídeo</title>
+<meta name="description" content="Designer gráfica e editora de vídeo desde 2019. Peças e conteúdos estratégicos que geram conexão, transmitem profissionalismo e fortalecem a presença da sua marca.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#f4efe6;
+  --bone2:#eae1d2;
+  --paper:#fbf8f2;
+  --ink:#1b1712;
+  --ink2:#484037;
+  --muted:#867a6b;
+  --coral:#ff4f2e;
+  --coral-d:#dd3a14;
+  --pink:#ff2e6e;
+  --amber:#ff7e3d;
+  --line:#ddd1bf;
+  --grad:linear-gradient(120deg,var(--amber),var(--coral) 52%,var(--pink));
+  --disp:'Fraunces',Georgia,serif;
+  --body:'Hanken Grotesk',system-ui,sans-serif;
+  --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bone);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.disp{font-family:var(--disp)}
+.it{font-style:italic}
+.coral{color:var(--coral)}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.eyebrow{font-family:var(--body);font-weight:600;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--coral);display:inline-flex;align-items:center;gap:.7rem}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--coral)}
+.sec-n{font-family:var(--body);font-weight:600;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--body);font-weight:600;font-size:.95rem;padding:.92rem 1.6rem;border-radius:50px;cursor:pointer;transition:.34s cubic-bezier(.2,.8,.2,1);border:1.5px solid transparent}
+.btn svg{width:18px;height:18px}
+.btn-coral{background:var(--ink);color:var(--bone)}
+.btn-coral:hover{background:var(--coral);transform:translateY(-3px)}
+.btn-out{border-color:var(--ink);color:var(--ink)}
+.btn-out:hover{background:var(--ink);color:var(--bone);transform:translateY(-3px)}
+.btn-light{background:var(--bone);color:var(--ink)}
+.btn-light:hover{background:var(--coral);color:#fff;transform:translateY(-3px)}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:80;background:rgba(244,239,230,.8);backdrop-filter:blur(14px);transition:.35s;border-bottom:1px solid transparent}
+nav.scrolled{border-bottom-color:var(--line);background:rgba(244,239,230,.95)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{font-family:var(--disp);font-weight:500;font-size:1.3rem;letter-spacing:-.01em;display:inline-flex;align-items:baseline;gap:1px}
+.logo b{font-weight:600}
+.logo .dot{color:var(--coral);font-weight:600}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a.lnk{font-size:.92rem;font-weight:500;color:var(--ink2);position:relative;transition:.3s}
+.nav-links a.lnk::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:1.5px;background:var(--coral);transition:.3s}
+.nav-links a.lnk:hover{color:var(--ink)}
+.nav-links a.lnk:hover::after{width:100%}
+.menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;-webkit-tap-highlight-color:transparent}
+.menu-btn span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+.menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;flex-direction:column;max-height:0;overflow:hidden;transition:max-height .4s ease;background:var(--bone);border-top:1px solid transparent}
+.mobile-menu .inner{padding:.4rem 28px 1.2rem}
+.mobile-menu a{display:block;padding:.95rem 0;font-size:1.08rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--line)}
+.mobile-menu a.btn{justify-content:center;border:none;margin-top:1.1rem;color:var(--bone)}
+.mobile-menu.open{max-height:420px;border-top-color:var(--line)}
+
+/* Hero */
+.hero{position:relative;z-index:2;padding:clamp(60px,9vw,110px) 0 clamp(50px,7vw,80px)}
+.avail{display:inline-flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:var(--ink2);margin-bottom:1.6rem}
+.avail .pip{width:9px;height:9px;border-radius:50%;background:#1fb866;box-shadow:0 0 0 4px rgba(31,184,102,.18);animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.4}}
+.hero h1{font-family:var(--disp);font-weight:400;font-size:clamp(2.7rem,8vw,6.4rem);line-height:.96;letter-spacing:-.025em;margin-bottom:1.5rem}
+.hero h1 .it{color:var(--coral)}
+.hero-low{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-top:.5rem}
+.hero-low p{max-width:440px;font-size:1.1rem;color:var(--ink2);font-weight:400}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.badge{position:absolute;top:7%;right:3%;width:128px;height:128px;animation:spin 16s linear infinite;z-index:3}
+.badge svg{width:100%;height:100%}
+.badge text{font-family:var(--body);font-size:9.2px;font-weight:600;letter-spacing:2.5px;fill:var(--ink)}
+.badge .core{position:absolute;inset:0;display:grid;place-items:center}
+.badge .core span{width:46px;height:46px;border-radius:50%;background:var(--grad);display:grid;place-items:center}
+.badge .core svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2.4}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Marquee */
+.marquee{position:relative;z-index:2;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);padding:18px 0;overflow:hidden;background:var(--ink);color:var(--bone)}
+.mq-track{display:flex;width:max-content;animation:slide 26s linear infinite}
+.mq-track span{font-family:var(--disp);font-style:italic;font-weight:400;font-size:1.5rem;padding:0 1.4rem;display:inline-flex;align-items:center;gap:1.4rem;white-space:nowrap}
+.mq-track span::after{content:"✦";color:var(--coral);font-style:normal;font-size:1rem}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* Sections */
+section.block{position:relative;z-index:2;padding:clamp(70px,10vw,130px) 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3.4rem;flex-wrap:wrap}
+.head h2{font-family:var(--disp);font-weight:400;font-size:clamp(2.1rem,5vw,3.6rem);line-height:1;letter-spacing:-.025em;max-width:11ch}
+.head h2 .it{color:var(--coral)}
+.head .sec-n{margin-bottom:.6rem;display:block}
+
+/* About */
+.about{background:var(--paper)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:3.4rem;align-items:center}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--grad)}
+.portrait .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;color:#fff;text-align:center;padding:1.5rem}
+.portrait .ph svg{width:44px;height:44px;stroke:#fff;fill:none;stroke-width:1.5;opacity:.9}
+.portrait .ph span{font-size:.82rem;font-weight:500;opacity:.92;max-width:210px}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about-tx h3{font-family:var(--disp);font-weight:400;font-size:clamp(1.8rem,3.6vw,2.7rem);line-height:1.08;letter-spacing:-.02em;margin:.9rem 0 1.3rem}
+.about-tx p{font-size:1.06rem;color:var(--ink2);margin-bottom:1rem;max-width:54ch}
+.stats{display:flex;gap:2.6rem;margin-top:2rem;padding-top:1.8rem;border-top:1px solid var(--line);flex-wrap:wrap}
+.stat .n{font-family:var(--disp);font-size:2rem;font-weight:500;line-height:1}
+.stat .l{font-size:.86rem;color:var(--muted);margin-top:.3rem}
+
+/* Services */
+.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.serv{background:var(--bone);padding:2.4rem 2.2rem;transition:.4s;position:relative}
+.serv:hover{background:var(--ink);color:var(--bone)}
+.serv .si{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2.4rem}
+.serv .num{font-family:var(--disp);font-style:italic;font-size:1.05rem;color:var(--muted)}
+.serv:hover .num{color:var(--coral)}
+.serv .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--bone2);transition:.4s}
+.serv:hover .ic{background:var(--coral)}
+.serv .ic svg{width:23px;height:23px;stroke:var(--ink);fill:none;stroke-width:1.7;transition:.4s}
+.serv:hover .ic svg{stroke:#fff}
+.serv h4{font-family:var(--disp);font-weight:500;font-size:1.5rem;letter-spacing:-.01em;margin-bottom:.5rem}
+.serv p{font-size:.97rem;color:var(--ink2);transition:.4s}
+.serv:hover p{color:#cabfae}
+
+/* Work */
+.work{background:var(--ink);color:var(--bone)}
+.work .head h2{color:var(--bone)}
+.work .sec-n{color:#a99c89}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.proj{display:block;transition:.4s}
+.proj-img{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--grad);margin-bottom:1rem}
+.proj-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.6s cubic-bezier(.2,.8,.2,1)}
+.proj:hover .proj-img img{transform:scale(1.06)}
+.proj-img .view{position:absolute;inset:0;display:flex;align-items:flex-end;padding:1rem;opacity:0;transition:.4s;background:linear-gradient(to top,rgba(20,16,12,.7),transparent 60%)}
+.proj:hover .proj-img .view{opacity:1}
+.proj-img .view span{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;color:#fff}
+.proj-img .view svg{width:15px;height:15px}
+.proj .tag{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--coral)}
+.proj h4{font-family:var(--disp);font-weight:400;font-size:1.35rem;line-height:1.1;margin-top:.3rem;letter-spacing:-.01em}
+.work-foot{margin-top:3rem;text-align:center}
+
+/* Quote */
+.quote{background:var(--bone);text-align:center}
+.quote blockquote{font-family:var(--disp);font-weight:400;font-size:clamp(1.7rem,4.4vw,3.2rem);line-height:1.18;letter-spacing:-.02em;max-width:18ch;margin:1.4rem auto 1.6rem}
+.quote blockquote .it{color:var(--coral)}
+.quote .by{font-size:.9rem;font-weight:600;letter-spacing:.05em;color:var(--muted)}
+
+/* CTA */
+.cta{background:var(--coral);color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta h2{font-family:var(--disp);font-weight:400;font-size:clamp(2.3rem,6vw,4.6rem);line-height:1;letter-spacing:-.025em}
+.cta p{font-size:1.12rem;margin:1.3rem auto 2.4rem;max-width:480px;opacity:.95}
+.cta .row{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.cta .big-mark{position:absolute;font-family:var(--disp);font-size:30rem;line-height:1;opacity:.08;right:-2rem;bottom:-7rem;font-style:italic}
+
+/* Footer */
+footer{background:var(--ink);color:var(--bone);position:relative;z-index:2;padding:60px 0 34px}
+.foot-top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.13)}
+.foot-brand .logo{color:var(--bone);font-size:1.6rem}
+.foot-brand p{color:#a99c89;margin-top:.7rem;max-width:300px;font-size:.95rem}
+.foot-soc{display:flex;flex-direction:column;gap:.6rem}
+.foot-soc h5{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:#a99c89;margin-bottom:.5rem}
+.foot-soc a{display:inline-flex;align-items:center;gap:.55rem;color:var(--bone);font-size:.95rem;transition:.3s}
+.foot-soc a:hover{color:var(--coral)}
+.foot-soc svg{width:17px;height:17px}
+.foot-bot{padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:.8rem;color:#a99c89}
+
+/* FAB */
+.fab{position:fixed;right:22px;bottom:22px;z-index:120;display:inline-flex;align-items:center;height:56px;border-radius:50px;background:var(--ink);color:var(--bone);overflow:hidden;transition:.4s;box-shadow:0 16px 36px -12px rgba(0,0,0,.5)}
+.fab .fi{width:56px;height:56px;display:grid;place-items:center;flex:none}
+.fab .fi svg{width:24px;height:24px}
+.fab .ft{max-width:0;white-space:nowrap;overflow:hidden;font-weight:600;font-size:.92rem;transition:.45s cubic-bezier(.2,.8,.2,1)}
+.fab:hover{background:var(--coral);transform:translateY(-3px)}
+.fab:hover .ft{max-width:200px;padding-right:22px}
+
+@media(max-width:880px){
+  .about-grid{grid-template-columns:1fr;gap:2.2rem}
+  .proj-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none}
+  .menu-btn{display:flex}
+  .mobile-menu{display:flex}
+  .badge{display:none}
+  .head{margin-bottom:2.6rem}
+}
+@media(max-width:560px){
+  .serv-grid{grid-template-columns:1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .wrap{padding:0 20px}
+  .mobile-menu .inner{padding:.4rem 20px 1.2rem}
+  .nav-in{padding:13px 0}
+  .logo{font-size:1.15rem}
+  .hero-cta{width:100%}
+  .hero-cta .btn{flex:1;justify-content:center}
+  .hero-low{gap:1.6rem}
+  .stats{gap:1.6rem 2rem}
+  .head{flex-direction:column;align-items:flex-start}
+  .fab .ft{display:none}
+  .fab:hover{transform:none}
+}
+</style>
+</head>
+<body id="top">
+<div class="grain"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo">Maressa&nbsp;<b>Silva</b><span class="dot">.</span></a>
+    <div class="nav-links">
+      <a class="lnk" href="#sobre">Sobre</a>
+      <a class="lnk" href="#servicos">Serviços</a>
+      <a class="lnk" href="#trabalhos">Trabalhos</a>
+      <a class="btn btn-coral" href="#contato">Iniciar um projeto</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="inner">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-coral" href="https://wa.me/5598982683980?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Maressa%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="badge">
+    <svg viewBox="0 0 100 100">
+      <defs><path id="circ" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
+      <text><textPath href="#circ">DESIGN · VÍDEO · ESTRATÉGIA · DESDE 2019 · </textPath></text>
+    </svg>
+    <span class="core"><span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+  </div>
+  <div class="wrap">
+    <span class="avail"><span class="pip"></span> Disponível para novos projetos</span>
+    <h1 class="disp">Design e vídeo<br>que vão <span class="it">além</span><br>da estética.</h1>
+    <div class="hero-low">
+      <p>Sou a <b>Maressa Silva</b> — designer gráfica e editora de vídeo. Desde 2019 crio peças e conteúdos que geram conexão, transmitem profissionalismo e fortalecem a presença da sua marca.</p>
+      <div class="hero-cta">
+        <a class="btn btn-coral" href="#contato">Iniciar um projeto
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-out" href="#trabalhos">Ver trabalhos</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <span>Médicos</span><span>Dentistas</span><span>Clínicas</span><span>Nutrólogos</span><span>Restaurantes</span><span>Lojas</span><span>Experts de Cursos</span><span>Esporte</span>
+    <span>Médicos</span><span>Dentistas</span><span>Clínicas</span><span>Nutrólogos</span><span>Restaurantes</span><span>Lojas</span><span>Experts de Cursos</span><span>Esporte</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="block about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="portrait">
+      <div class="ph">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>
+        <span>Espaço para a foto da Maressa</span>
+      </div>
+      <!-- Para usar a foto, troque o bloco .ph por: <img src="CAMINHO_DA_FOTO.jpg" alt="Maressa Silva"> -->
+    </div>
+    <div class="about-tx">
+      <span class="sec-n">(01) — Sobre mim</span>
+      <h3 class="disp">Cada projeto é pensado para gerar <span class="it coral">resultado</span> — não só beleza.</h3>
+      <p>Atuo desde 2019 desenvolvendo materiais estratégicos para médicos, dentistas, clínicas, restaurantes, lojas, experts de cursos online e muito mais. Meu trabalho vai além da estética: ele constrói conexão e transmite profissionalismo.</p>
+      <p>Tenho foco em comunicação clara, identidade visual consistente e conteúdos que fortalecem a presença da marca — peças gráficas e vídeos de alta performance, incluindo reels.</p>
+      <div class="stats">
+        <div class="stat"><div class="n disp">2019</div><div class="l">Atuando desde</div></div>
+        <div class="stat"><div class="n disp">Design+Vídeo</div><div class="l">Dupla expertise</div></div>
+        <div class="stat"><div class="n disp">+6</div><div class="l">Segmentos atendidos</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="block" id="servicos">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="sec-n">(02) — Serviços</span><h2 class="disp">O que eu <span class="it">faço</span> por você</h2></div>
+      <a class="btn btn-out" href="#contato">Solicitar orçamento</a>
+    </div>
+    <div class="serv-grid">
+      <div class="serv">
+        <div class="si"><span class="num">01</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 14l4-4 4 4 4-5 4 4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="8" r="1.4"/></svg></span></div>
+        <h4>Design Gráfico & Identidade Visual</h4>
+        <p>Peças, posts e materiais com uma identidade consistente que faz a marca ser reconhecida em qualquer lugar.</p>
+      </div>
+      <div class="serv">
+        <div class="si"><span class="num">02</span><span class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><circle cx="12" cy="11" r="3"/><path d="M9 7h.01" stroke-linecap="round"/></svg></span></div>
+        <h4>Social Media</h4>
+        <p>Conteúdo estratégico para as redes sociais, pensado para engajar e fortalecer a sua presença online.</p>
+      </div>
+      <div class="serv">
+        <div class="si"><span class="num">03</span><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 9l4-2v10l-4-2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 9.5v5l4-2.5z" stroke-linejoin="round"/></svg></span></div>
+        <h4>Edição de Vídeo & Reels</h4>
+        <p>Vídeos e reels de alta performance — ritmo, corte e narrativa que prendem a atenção do início ao fim.</p>
+      </div>
+      <div class="serv">
+        <div class="si"><span class="num">04</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 3 9-9" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 6v5h-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <h4>Conteúdo para Marketing Digital</h4>
+        <p>Materiais e campanhas estratégicas, criados para gerar conexão real e trazer resultados para o negócio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="block work" id="trabalhos">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="sec-n">(03) — Portfólio</span><h2 class="disp">Trabalhos <span class="it">selecionados</span></h2></div>
+      <a class="btn btn-light" href="https://www.behance.net/maressa" target="_blank" rel="noopener">Ver tudo no Behance</a>
+    </div>
+    <div class="proj-grid">
+      <a class="proj" href="https://www.behance.net/gallery/205633297/Cirurgiao-plastico-Mdico-Design" target="_blank" rel="noopener">
+        <div class="proj-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/430f29205633297.Y3JvcCwxMzk5LDEwOTUsMCww.png" alt="Cirurgião plástico" loading="lazy" onerror="this.style.display='none'"><div class="view"><span>Ver projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
+        <div class="tag">Médico</div><h4 class="disp">Cirurgião Plástico</h4>
+      </a>
+      <a class="proj" href="https://www.behance.net/gallery/205626027/Nutrologa-Mdica-Design" target="_blank" rel="noopener">
+        <div class="proj-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/748c28205626027.Y3JvcCwxMzk5LDEwOTUsMCww.jpg" alt="Nutróloga" loading="lazy" onerror="this.style.display='none'"><div class="view"><span>Ver projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
+        <div class="tag">Médica</div><h4 class="disp">Nutróloga</h4>
+      </a>
+      <a class="proj" href="https://www.behance.net/gallery/205624363/Dentista-Especialista-em-DTM-Design" target="_blank" rel="noopener">
+        <div class="proj-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/bacc39205624363.Y3JvcCwxMzk5LDEwOTUsMCww.png" alt="Dentista DTM" loading="lazy" onerror="this.style.display='none'"><div class="view"><span>Ver projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
+        <div class="tag">Odontologia</div><h4 class="disp">Especialista em DTM</h4>
+      </a>
+      <a class="proj" href="https://www.behance.net/gallery/205632061/Professor-Curso-Online-para-Enfermeiros-Design" target="_blank" rel="noopener">
+        <div class="proj-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/2b012f205632061.Y3JvcCwxMzk5LDEwOTUsMCww.png" alt="Curso online para enfermeiros" loading="lazy" onerror="this.style.display='none'"><div class="view"><span>Ver projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
+        <div class="tag">Curso Online</div><h4 class="disp">Professor / Enfermagem</h4>
+      </a>
+      <a class="proj" href="https://www.behance.net/gallery/246511247/Portfolio-Edicao-de-video" target="_blank" rel="noopener">
+        <div class="proj-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/1408c9246511247.Y3JvcCwxMzk5LDEwOTUsMCww.png" alt="Edição de vídeo" loading="lazy" onerror="this.style.display='none'"><div class="view"><span>Ver projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
+        <div class="tag">Vídeo</div><h4 class="disp">Edição de Vídeo</h4>
+      </a>
+      <a class="proj" href="https://www.behance.net/gallery/205627307/Esporte-(futebol)" target="_blank" rel="noopener">
+        <div class="proj-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/11b15a205627307.Y3JvcCwxMzk5LDEwOTUsMCww.png" alt="Esporte futebol" loading="lazy" onerror="this.style.display='none'"><div class="view"><span>Ver projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
+        <div class="tag">Esporte</div><h4 class="disp">Futebol</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="block quote">
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center">Filosofia</span>
+    <blockquote class="disp">Comunicação clara, identidade <span class="it">consistente</span> e conteúdo que fortalece a marca.</blockquote>
+    <div class="by">— Maressa Silva</div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="block cta" id="contato">
+  <span class="big-mark">✦</span>
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center;color:#fff">(04) — Contato</span>
+    <h2 class="disp" style="margin-top:1rem">Vamos elevar o nível<br>do seu <span class="it">projeto?</span></h2>
+    <p>Me conta a sua ideia. Vou criar algo comprometido, criativo e estratégico para agregar valor ao seu negócio.</p>
+    <div class="row">
+      <a class="btn btn-light" href="https://www.behance.net/maressa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 8.3c.6 0 1.1.1 1.5.3.4.1.8.4 1 .6.3.3.5.6.6 1 .1.3.2.8.2 1.2 0 .5-.1 1-.4 1.4-.2.4-.6.7-1 1 .6.2 1.1.5 1.4 1 .3.4.5 1 .5 1.7 0 .5-.1 1-.3 1.4-.2.4-.5.7-.9 1-.4.2-.8.4-1.3.5-.5.1-1 .2-1.5.2H3V8.3h6.5Zm-.3 4.3c.4 0 .8-.1 1-.3.3-.2.4-.5.4-1 0-.2 0-.4-.1-.6 0-.1-.2-.3-.3-.4-.2-.1-.3-.1-.5-.2H6v2.5h3.2Zm.2 4.6c.2 0 .4 0 .6-.1.2 0 .3-.1.5-.2.1-.1.2-.2.3-.4.1-.2.1-.4.1-.6 0-.5-.1-.9-.4-1.1-.3-.2-.7-.3-1.2-.3H6v2.8h3.4ZM16.7 16.6c.3.3.8.5 1.4.5.4 0 .8-.1 1.1-.3.3-.2.5-.4.6-.6h2c-.3 1-.8 1.7-1.5 2.2-.7.4-1.5.6-2.4.6-.7 0-1.2-.1-1.8-.3-.5-.2-1-.5-1.3-.9-.4-.4-.6-.9-.8-1.4-.2-.5-.3-1.1-.3-1.8 0-.6.1-1.2.3-1.7.2-.5.5-1 .9-1.4.4-.4.8-.7 1.3-.9.5-.2 1.1-.3 1.7-.3.7 0 1.3.1 1.8.4.5.3.9.6 1.3 1.1.3.5.6 1 .7 1.6.1.6.2 1.2.1 1.8h-5.8c0 .7.2 1.2.5 1.6Zm2.4-4.3c-.3-.3-.7-.4-1.2-.4-.4 0-.6.1-.9.2-.2.1-.4.3-.5.4-.1.2-.2.3-.3.5 0 .2-.1.3-.1.5h3.6c-.1-.5-.3-.9-.6-1.2ZM15 7.9h4.5v1.1H15V7.9Z"/></svg>
+        Behance
+      </a>
+      <a class="btn" style="background:#25d366;color:#fff" href="https://wa.me/5598982683980?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Maressa%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6a8.6 8.6 0 0 1-3.3-2.9c-.7-.9-1.1-1.9-1.1-2.1 0-.2.1-.8.5-1.1.3-.3.4-.3.6-.3h.4c.2 0 .3 0 .5.4l.7 1.6c0 .1.1.3 0 .5l-.3.5-.3.3c-.1.1-.2.2-.1.4a6 6 0 0 0 2.6 2.2c.2.1.4.1.5-.1l.6-.8c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.5 0 .9Z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn" style="background:#fff;color:var(--ink)" href="https://www.instagram.com/maressakeila" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="logo">Maressa <b>Silva</b><span class="dot">.</span></a>
+        <p>Designer gráfica e editora de vídeo. Design e vídeo estratégicos que geram conexão e resultado.</p>
+      </div>
+      <div class="foot-soc">
+        <h5>Onde me encontrar</h5>
+        <a href="https://www.behance.net/maressa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 8.3c.6 0 1.1.1 1.5.3.4.1.8.4 1 .6.3.3.5.6.6 1 .1.3.2.8.2 1.2 0 .5-.1 1-.4 1.4-.2.4-.6.7-1 1 .6.2 1.1.5 1.4 1 .3.4.5 1 .5 1.7 0 .5-.1 1-.3 1.4-.2.4-.5.7-.9 1-.4.2-.8.4-1.3.5-.5.1-1 .2-1.5.2H3V8.3h6.5ZM15 7.9h4.5v1.1H15V7.9Z"/></svg>
+          behance.net/maressa
+        </a>
+        <a href="https://wa.me/5598982683980?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Maressa%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2Z"/></svg>
+          (98) 98268-3980
+        </a>
+        <a href="https://www.instagram.com/maressakeila" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+          @maressakeila
+        </a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr"></span> Maressa Silva — Design & Vídeo. Brasil.</span>
+      <span>Disponível para freelance</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FAB WhatsApp -->
+<a class="fab" href="https://wa.me/5598982683980?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Maressa%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <span class="fi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6a8.6 8.6 0 0 1-3.3-2.9c-.7-.9-1.1-1.9-1.1-2.1 0-.2.1-.8.5-1.1.3-.3.4-.3.6-.3h.4c.2 0 .3 0 .5.4l.7 1.6c0 .1.1.3 0 .5l-.3.5-.3.3c-.1.1-.2.2-.1.4a6 6 0 0 0 2.6 2.2c.2.1.4.1.5-.1l.6-.8c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.5 0 .9Z"/></svg></span>
+  <span class="ft">Vamos conversar</span>
+</a>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30));
+document.getElementById('yr').textContent=new Date().getFullYear();
+const mb=document.getElementById('menuBtn'),mm=document.getElementById('mobileMenu');
+function toggleMenu(open){const o=open!==undefined?open:!mm.classList.contains('open');mm.classList.toggle('open',o);mb.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);}
+mb.addEventListener('click',()=>toggleMenu());
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+</script>
+</body>
+</html>
